@@ -7,4 +7,7 @@
   Vậy ta có một vòng lặp để tính toán giá trị của từng trạng thái với hành động khác nhau, tiếp đó hàm computeActionFromValues sẽ quyết định phải đi theo đường nào bằng cách đi theo đường có giá trị Q lớn nhất .
     
 ### 2. Bridge Crossing Analysis
-    Như đã thấy trong hình vẽ, tác tử của chúng ta xuất phát từ nơi gần điểm thấp và mục tiêu là đi đến nơi có điểm cao với đường đi đến đó có dạng 1 caay cầu gồm các value có giá trị thấp, quan đó là hàng loạt các ô có điểm -100 (điểm cực thấp). Hệ số answerNoise dùng để thay đổi đường đi của tác tử dù theo kết quả tính toán lẽ ra nó phải đi theo hướng nào đó. Nhằm đảm bảo khi Q tính không được tối ưu thì nó vẫn ra kết quả. Chuyển hệ số này về 0 tác tử sẽ đi như 
+    Như đã thấy trong hình vẽ, tác tử của chúng ta xuất phát từ nơi gần điểm thấp và mục tiêu là đi đến nơi có điểm cao với đường đi đến đó có dạng 1 
+    cầu cầu gồm các value có giá trị thấp, quan đó là hàng loạt các ô có điểm -100 (điểm cực thấp). Hệ số answerNoise dùng để thay đổi đường đi của 
+    tác tử dù theo kết quả tính toán lẽ ra nó phải đi theo hướng nào đó. Nhằm đảm bảo khi Q tính không được tối ưu thì nó vẫn ra kết quả. Chuyển hệ số 
+    này về 0 tác tử sẽ đi như 
