@@ -72,11 +72,12 @@ class ValueIterationAgent(ValueEstimationAgent):
         "*** YOUR CODE HERE ***"
         transitionStatesAndProbs = self.mdp.getTransitionStatesAndProbs(state, action)
         value = 0
-        #for each transition, the value is calculated as the summ of reward of getting to that transition and discounted value of transition state
-        #summing these transition values gives the q-value for a state action pair. 
+        
         for ts in transitionStatesAndProbs:
           stateTransitionReward = self.mdp.getReward(state, action, ts[0])
           value = value + stateTransitionReward + self.discount*(self.values[ts[0]]*ts[1])
+          
+          
 
         return value
 
