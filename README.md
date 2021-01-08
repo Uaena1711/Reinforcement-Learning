@@ -17,4 +17,14 @@
    3b. Muốn ra nhanh nhưng đi vòng hơn câu a thì để answerLivingReward lớn hơn câu trên. 
    3c. Để đi ra ô +10 và chấp nhận dường có rủi ro thì đặt answerLivingReward bé hơn câu a để nó không vội tìm đến chỗ kết thức trạng thái.
    3d. Để đi ra ô +10 và tránh dường có rủi ro thì để answerLivingReward lớn hơn câu 3c. 
-   3e. Để không đến trạng thái kết thúc thì answerLivingReward lớn hơn 10 => nó sẽ không dừng lại vì ô thưởng có +10 còn thưởng để sống lớn hơn. 
+   3e. Để không đến trạng thái kết thúc thì answerLivingReward lớn hơn 10 => nó sẽ không dừng lại vì ô thưởng có +10 còn thưởng để sống lớn hơn.
+## 4. Q-Learning
+   Các hàm init, getQvalue được viết giống ý tưởng của bài 1 chỉ khác chỗ computeValueFromQValues và computeActionFromQValues chỉ dùng hàm getQvalue chứ 
+   không gọi trực tiếp self, đồng thời  chọn ra hành động có Qvalue cai nhất nhưng nếu có nhiều giá trị bằng hau thì random 1 action trong dãy đó.
+   Hàm update được cập nhật theo công thức tính Qvalue trong slide. 
+## 5. Epsilon Greedy
+   Sử dụng hàm flipCoin để đánh giá xác suất epsilon. Nếu đánh giá được thì chọn random hành động nếu không thì đi theo ké hoạch. Hàm này để lựa chọn 
+   action dựa trên độ nhiễu truyền vào, đảm bảo tác tử không đi y hệt kế hoạch nhằm tránh trường hợp Qvalue không tối ưu.
+## 6. Bridge Crossing Revisited
+   Ta chọn các giá trị : answerEpsilon = 0.1 answerLearningRate = 0.8 Vì không thể tìm được con đường tối ưu đến 99%, 50 tập là quá nhỏ nên cần 
+   thêm để tìm kiếm
